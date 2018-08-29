@@ -10,6 +10,7 @@ function sleep(ms){
 
 const processEntry = async (entry) => {
   for (let i = 1; i <= entry.chapterCount; i ++) {
+    console.log(entry.book + ':' + i);
     const url = `https://www.studylight.org/commentary/${entry.book}/${i}.html`;
     const response = await axios.get(url);
     const dom = new JSDOM(response.data);
